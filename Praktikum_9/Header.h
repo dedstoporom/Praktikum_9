@@ -1,4 +1,3 @@
-template <typename T>
 class Deque
 {
 public:
@@ -6,20 +5,20 @@ public:
     Deque();
     ~Deque();
 
-    int GetSize() const{ return size_; }
-    bool PushFront(const T &data);
-    bool PushBack(const T &data);
+    int GetSize() const { return size_; }
+    bool PushFront(const int& data);
+    bool PushBack(const int& data);
     bool PopFront();
     bool PopBack();
-    
+
 private:
 
-    template <typename>
+
     class Node
     {
     public:
 
-        Node(T data, Node* pNext = NULL, Node* pPrev = NULL)
+        Node(int data, Node* pNext = NULL, Node* pPrev = NULL)
         {
             data_ = data;
             pNext_ = pNext;
@@ -28,10 +27,10 @@ private:
 
         Node* pNext_;
         Node* pPrev_;
-        T data_;
+        int data_;
     };
 
-    Node<T>* head_;
-    Node<T>* tail_;
+    Node* head_;
+    Node* tail_;
     int size_;
 };
